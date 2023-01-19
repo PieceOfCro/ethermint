@@ -116,6 +116,7 @@ func init() {
 			}
 		},
 		TxPoolNamespace: func(ctx *server.Context, _ client.Context, _ *rpcclient.WSClient, _ bool, _ ethermint.EVMTxIndexer) []rpc.API {
+			// TODO: we need to pass into this some sort of mempool/tx manager
 			return []rpc.API{
 				{
 					Namespace: TxPoolNamespace,

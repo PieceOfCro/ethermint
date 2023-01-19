@@ -22,6 +22,7 @@ func NewPublicAPI(logger log.Logger) *PublicAPI {
 }
 
 // Content returns the transactions contained within the transaction pool
+// TODO: replace this
 func (api *PublicAPI) Content() (map[string]map[string]map[string]*types.RPCTransaction, error) {
 	api.logger.Debug("txpool_content")
 	content := map[string]map[string]map[string]*types.RPCTransaction{
@@ -32,6 +33,7 @@ func (api *PublicAPI) Content() (map[string]map[string]map[string]*types.RPCTran
 }
 
 // Inspect returns the content of the transaction pool and flattens it into an
+// TODO: replace this
 func (api *PublicAPI) Inspect() (map[string]map[string]map[string]string, error) {
 	api.logger.Debug("txpool_inspect")
 	content := map[string]map[string]map[string]string{
@@ -42,6 +44,7 @@ func (api *PublicAPI) Inspect() (map[string]map[string]map[string]string, error)
 }
 
 // Status returns the number of pending and queued transaction in the pool.
+// TODO: replace this
 func (api *PublicAPI) Status() map[string]hexutil.Uint {
 	api.logger.Debug("txpool_status")
 	return map[string]hexutil.Uint{
