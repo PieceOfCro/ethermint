@@ -74,11 +74,13 @@ func (api *PublicAPI) Status() map[string]hexutil.Uint {
 		return map[string]hexutil.Uint{
 			"pending": hexutil.Uint(0),
 			"queued":  hexutil.Uint(0),
+			"success": hexutil.Uint(0),
 		}
 	}
 
 	return map[string]hexutil.Uint{
 		"pending": hexutil.Uint(len(pending)),
 		"queued":  hexutil.Uint(0),
+		"success": hexutil.Uint(1),
 	}
 }
