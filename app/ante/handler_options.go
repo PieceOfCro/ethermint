@@ -78,6 +78,7 @@ func newEthAnteHandler(options HandlerOptions) sdk.AnteHandler {
 		NewEthIncrementSenderSequenceDecorator(options.AccountKeeper), // innermost AnteDecorator.
 		NewGasWantedDecorator(options.EvmKeeper, options.FeeMarketKeeper),
 		NewEthEmitEventDecorator(options.EvmKeeper), // emit eth tx hash and index at the very last ante handler.
+		// TODO, probably want to create a new decorator here to capture the tx? and somehow expose it to the rpc?
 	)
 }
 
